@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+:root{
+    --main: #3EC1F3;
+    --white: white;
+    --black: black;
+    --text-color: #707070;
+}
+
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.registration-form{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.registration-form .left-side{
+    width: 50%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: url('images/banner.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    color: var(--white);
+    padding: 35px 40px;
+    overflow: hidden;
+}
+
+.left-side .logo{
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.left-side .description{
+    font-size: 1.5rem;
+    width: 90%;
+}
+
+.left-side .details{
+    font-weight: bold;
+}
+
+.left-side .details a{
+    position: relative;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.left-side .details a::before{
+    position: absolute;
+    content: '';
+    left: 10%;
+    bottom: -1px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--white);
+    transition: all .5s ease-in-out;
+}
+
+.left-side .details a:hover::before{
+    width: 80%;
+}
+
+
+/* right side */
+.registration-form .right-side{
+    position: relative;
+    width: 50%;
+}
+
+.right-side .container{
+    width: 80%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 80px 0 20px;
+}
+
+.right-side .container .title h1{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.right-side .container .title .title-box{
+    font-size: 2rem;
+}
+
+.right-side .container .title p{
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.right-side form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* gap: 15px; */
+}
+.right-side form .form-group{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 25px;
+}
+.form-group input{
+    width: 100%;
+    padding: 10px 0px 5px;
+    border: none;
+    border-bottom: 3px solid var(--black);
+    font-size: 1.1rem;
+}
+
+.form-group.success input {
+	border-color: #2ecc71;
+}
+.form-group.error input {
+	border-color: #e74c3c;
+}
+.form-group i{
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    visibility: hidden;
+}
+.form-group.success i.fa-circle-check{
+    color: #2ecc71;
+    visibility: visible;
+}
+.form-group.error i.fa-circle-exclamation{
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-group  small{
+    color: #e74c3c;
+    padding-top: 5px;
+    visibility: hidden;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+.form-group.error  small{
+    visibility: visible;
+}
+.form-group1 {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.form-group1 button{
+    width: 100%;
+    padding: 20px; 
+    text-transform: capitalize;
+    color: var(--white);
+    border: none;
+    background-color: var(--black);
+    border-radius: 15px;
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+}
+.form-group1 a{
+    width: 100%;
+    padding: 15px;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: var(--black);
+    border: 1px solid var(--text-color);
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.container .signin{
+    color: var(--black);
+}
+.container .signin a{
+    color: var(--main);
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+
+@media screen and (max-width: 900px) {
+    .registration-form{
+        flex-direction: column;
+    }
+    .registration-form .left-side,
+    .registration-form .right-side{
+        width: 100%;
+    }
+    .right-side .container .title,
+    .right-side .container form,
+    .right-side .container .signin{
+        padding: 10px 0;
+    }
+    .container .signin{
+        width: 100%;
+        text-align: center;
+
+    }
+}
+
+@media screen and (max-width:600px) {
+    .registration-form .left-side{
+        padding: 25px 30px;
+    }
+    .left-side .logo{
+        font-size: 1.1rem;
+    }
+    .left-side .description{
+        font-size: 1rem;
+    }
+    .right-side .container{
+        padding: 60px 0 20px;
+    }
+    .right-side .container .title h1{
+        font-size: 1.5rem;
+    }
+    .right-side .container .title .title-box{
+        font-size: 1.5rem;
+    }
+    .right-side .container .title p{
+        font-style: 1rem;
+        color: var(--text-color);
+    }
+    .form-group1 button{
+        font-size: .9rem;
+    }
+    .form-group1 a{
+        font-size: .9rem;
+        gap: 10px;
+    }
+}
